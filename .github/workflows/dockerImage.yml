@@ -39,7 +39,6 @@ jobs:
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
-
       - name: Maven Package
         run: mvn -B -Pprod  clean package -DskipTests
       - name: Maven Verify
